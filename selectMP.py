@@ -23,7 +23,6 @@ def select_mp(population: List[Individual],
               ep: float
               ) -> Tuple[List[Individual], np.ndarray, float, float, np.ndarray, bool]:
     """
-    Python bản tương đương:
       [population, rank, bestobj, bestCV, bestX, Flag] = selectMP(...)
     - population, offspring: danh sách Individual (kích thước bằng nhau)
     - ep: epsilon cho Epsilon-Constraint

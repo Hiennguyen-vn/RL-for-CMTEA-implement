@@ -5,12 +5,37 @@ from dataclasses import dataclass
 from typing import List, Tuple
 
 from SPX import SBX
-from DE_rand_1 import DE_rand_1
-from DE_rand_2 import DE_rand_2
-from DE_best_1 import DE_best_1
-from KT import KT
-from initializeMP import initialize_mp
-from selectMP import select_mp
+from SPX import SBX
+# tolerant imports: modules live either at top-level (old layout) or under RL_MFEA package
+try:
+    from RL_MFEA.DE_rand_1 import DE_rand_1
+except Exception:
+    from DE_rand_1 import DE_rand_1
+
+try:
+    from RL_MFEA.DE_rand_2 import DE_rand_2
+except Exception:
+    from DE_rand_2 import DE_rand_2
+
+try:
+    from RL_MFEA.DE_best_1 import DE_best_1
+except Exception:
+    from DE_best_1 import DE_best_1
+
+try:
+    from RL_MFEA.KT import KT
+except Exception:
+    from KT import KT
+
+try:
+    from RL_MFEA.initializeMP import initialize_mp
+except Exception:
+    from initializeMP import initialize_mp
+
+try:
+    from RL_MFEA.selectMP import select_mp
+except Exception:
+    from selectMP import select_mp
 
 # ====== Các cấu trúc & tiện ích cơ bản (đồng bộ với các phần trước) ======
 @dataclass
@@ -26,7 +51,7 @@ class AlgoParams:
     DE_F: float = 0.5
     DE_CR: float = 0.5
 
-# --- Bạn đã có các hàm này ở các message trước, nhắc lại khai báo ---
+# --- Đã có các hàm này ở các message trước, nhắc lại khai báo ---
 # SBX(), GA_Crossover(), GA_Mutation()
 # DE_best_1(), DE_rand_1(), DE_rand_2()
 # KT()

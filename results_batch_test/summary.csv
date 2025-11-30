@@ -1,0 +1,5 @@
+problem,task_idx,seed,best_cost,best_cv,conv_file,conv_cv_file,bestx_file
+CMT1,0,0,2.220446049250313e-16,0.0,results_batch_test/CMT1/CMT1_seed0_20251127T023930Z_conv.npy,results_batch_test/CMT1/CMT1_seed0_20251127T023930Z_conv_cv.npy,results_batch_test/CMT1/CMT1_seed0_20251127T023930Z_bestx.npy
+CMT1,1,0,6.252776074688882e-13,0.0,results_batch_test/CMT1/CMT1_seed0_20251127T023930Z_conv.npy,results_batch_test/CMT1/CMT1_seed0_20251127T023930Z_conv_cv.npy,results_batch_test/CMT1/CMT1_seed0_20251127T023930Z_bestx.npy
+CMT2,0,0,1.6230697230668056e-08,0.0,results_batch_test/CMT2/CMT2_seed0_20251127T023937Z_conv.npy,results_batch_test/CMT2/CMT2_seed0_20251127T023937Z_conv_cv.npy,results_batch_test/CMT2/CMT2_seed0_20251127T023937Z_bestx.npy
+CMT2,1,0,1.7053025658242404e-13,0.0,results_batch_test/CMT2/CMT2_seed0_20251127T023937Z_conv.npy,results_batch_test/CMT2/CMT2_seed0_20251127T023937Z_conv_cv.npy,results_batch_test/CMT2/CMT2_seed0_20251127T023937Z_bestx.npy

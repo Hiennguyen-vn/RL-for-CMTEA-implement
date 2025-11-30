@@ -100,16 +100,13 @@ def SBX(params: AlgoParams, population):
     half = n // 2
     num_pairs = math.ceil(n / 2)
 
-    offspring = [copy.deepcopy(population[0]) for _ in range(n)]
-    out_idx = 0
-
+    offspring = []
     for i in range(num_pairs):
         p1 = perm[i]
         p2 = perm[i + half] if (i + half) < n else perm[i + half - n]  # bù vòng giống MATLAB khi cần
 
-        # copy meta
-        offspring[out_idx]   = copy.deepcopy(population[p1])
-        offspring[out_idx+1] = copy.deepcopy(population[p2])
+        child1 = copy.deepcopy(population[p1])
+        child2 = copy.deepcopy(population[p2])
 
         # SBX
         c1_vec, c2_vec = GA_Crossover(population[p1].rnvec, population[p2].rnvec, params.GA_MuC)
@@ -122,15 +119,14 @@ def SBX(params: AlgoParams, population):
         c1_vec = np.clip(c1_vec, 0.0, 1.0)
         c2_vec = np.clip(c2_vec, 0.0, 1.0)
 
-        offspring[out_idx].rnvec   = c1_vec
-        offspring[out_idx+1].rnvec = c2_vec
+        child1.rnvec = c1_vec
+        child2.rnvec = c2_vec
 
-        out_idx += 2
-        if out_idx >= n:  # nếu n lẻ, sẽ tạo nhiều hơn; cắt lại cho đúng kích thước
-            offspring = offspring[:n]
-            break
+        offspring.append(child1)
+        offspring.append(child2)
 
-    return offspring
+    # Nếu n lẻ, có thể sinh dư 1 cá thể; cắt về đúng kích thước n
+    return offspring[:n]
 
 # ==========================
 # Ví dụ chạy nhanh
